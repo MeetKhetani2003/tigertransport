@@ -1,0 +1,135 @@
+.coming-soon-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 60px;
+  background: radial-gradient(circle at top right, #fcf9f2, var(--bg-color));
+  overflow: hidden;
+  position: relative;
+}
+
+.coming-soon-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+.icon-container {
+  margin-bottom: 2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.cs-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.cs-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 400px;
+}
+
+.return-btn {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.coming-soon-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abstract-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: float 10s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(212, 175, 55, 0.3); /* Gold */
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(138, 21, 27, 0.15); /* Red highlight */
+  bottom: 20%;
+  left: 20%;
+  animation-delay: -3s;
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  top: 40%;
+  right: 40%;
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@media (max-width: 992px) {
+  .coming-soon-card {
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    min-height: 400px;
+  }
+  
+  .coming-soon-visual {
+    display: none;
+  }
+  
+  .cs-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .coming-soon-card {
+    padding: 2rem;
+  }
+  
+  .cs-title {
+    font-size: 2.5rem;
+  }
+}
