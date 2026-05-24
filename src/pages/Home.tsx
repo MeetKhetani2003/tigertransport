@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  CheckCircle, Truck, Package, Factory, Briefcase, 
+  Truck, Package, Factory, Briefcase, 
   Globe, Shield, Clock, HeartHandshake, Phone, MapPin, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
