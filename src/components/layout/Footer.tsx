@@ -14,7 +14,7 @@ export function Footer() {
           <div className="space-y-5">
             <Link href="/" className="inline-block">
               <div className="bg-white rounded-lg p-2 inline-block">
-                <Image src="/logo.png" alt="Durga Transport Services" width={140} height={40} className="object-contain h-8 w-auto" />
+                <Image src="/logo.png" alt="Durga Transport Services India Pvt Ltd" width={140} height={40} className="object-contain h-8 w-auto" />
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-zinc-500">
@@ -64,7 +64,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[var(--color-brand-red)] shrink-0 mt-0.5" />
-                <span>DTS House, Near Nahar Maruti Suzuki Workshop, Dhankot, Gurugram, Haryana 122505</span>
+                <span>Durga Transport Services India Pvt Ltd House, Near Nahar Maruti Suzuki Workshop, Dhankot, Gurugram, Haryana 122505</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[var(--color-brand-red)] shrink-0" />
@@ -80,7 +80,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-600">
-          <p>&copy; {currentYear} Durga Transport Services India. All rights reserved.</p>
+          <p>&copy; {currentYear} Durga Transport Services India Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>

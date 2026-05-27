@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react"
 
 export function WhatsAppCTA() {
   const phoneNumber = "919812773410"
-  const message = "Hello Durga Transport Services, I would like to get a quote for my logistics requirements."
+  const message = "Hello Durga Transport Services India Pvt Ltd, I would like to get a quote for my logistics requirements."
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (

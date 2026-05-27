@@ -45,7 +45,7 @@ export default function FleetPage() {
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
             src="/hero/relevant-3.png"
-            alt="Durga Transport Carrier Fleet"
+            alt="Durga Transport Services India Pvt Ltd Carrier Fleet"
             fill
             className="object-cover grayscale"
             priority
@@ -59,7 +59,7 @@ export default function FleetPage() {
               High Capacity Carriers
             </span>
             <h1 className="text-4xl md:text-6xl font-medium tracking-tight text-white leading-none">
-              DTS <span className="text-[var(--color-brand-red)] font-semibold">Active Fleet</span>
+              Durga Transport Services India Pvt Ltd <span className="text-[var(--color-brand-red)] font-semibold">Active Fleet</span>
             </h1>
             <p className="text-lg md:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
               Equipped with modern specifications, safety equipment, and GPS tracking to handle every logistics requirement.

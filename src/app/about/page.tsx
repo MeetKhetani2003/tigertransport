@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
             src="/hero/relevant-2.png"
-            alt="About Durga Transport Services"
+            alt="About Durga Transport Services India Pvt Ltd"
             fill
             className="object-cover grayscale"
             priority
@@ -33,7 +33,7 @@ export default function AboutPage() {
               Our Legacy & Journey
             </span>
             <h1 className="text-4xl md:text-6xl font-medium tracking-tight text-white leading-none">
-              About <span className="text-[var(--color-brand-red)] font-semibold">Durga Transport</span>
+              About <span className="text-[var(--color-brand-red)] font-semibold">Durga Transport Services India Pvt Ltd</span>
             </h1>
             <p className="text-lg md:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
               Pioneering enterprise logistics with 25+ years of trust, dedicated carrier fleet, and nationwide connectivity.
@@ -54,7 +54,7 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-zinc-100">
-                <Image src="/hero/relevant-1.png" alt="Durga Transport Express Route" fill className="object-cover" />
+                <Image src="/hero/relevant-1.png" alt="Durga Transport Services India Pvt Ltd Express Route" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-[var(--color-brand-red)] rounded-2xl flex flex-col items-center justify-center shadow-lg p-4">
                 <div className="text-4xl font-bold text-white tracking-tight">25+</div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 An Unwavering Commitment <br />to India's Supply Chain
               </h2>
               <p className="text-base md:text-lg text-zinc-600 leading-relaxed font-normal">
-                Established over two decades ago, Durga Transport Services started with a clear vision: to redefine reliability in transport and logistics. Today, we are proud to stand as one of India's most trusted logistics partners, managing national supply networks for blue-chip corporations and growing enterprises alike.
+                Established over two decades ago, Durga Transport Services India Pvt Ltd started with a clear vision: to redefine reliability in transport and logistics. Today, we are proud to stand as one of India's most trusted logistics partners, managing national supply networks for blue-chip corporations and growing enterprises alike.
               </p>
               <p className="text-zinc-600 leading-relaxed font-normal">
                 We believe that modern businesses need more than just carrier space; they need a proactive, responsive, and accountable supply chain partner. That is why we invest in our own advanced fleet, real-time GPS tracking systems, and automated operations to guarantee consistent, safe, and on-time transit every single time.

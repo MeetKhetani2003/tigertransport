@@ -24,7 +24,7 @@ const industries = [
 ]
 
 const faqs = [
-  { q: "Do you provide Pan India transportation services?", a: "Yes. Durga Transport Services operates across all major Indian states and union territories. Our logistics network spans 500+ cities ensuring seamless cargo movement nationwide." },
+  { q: "Do you provide Pan India transportation services?", a: "Yes. Durga Transport Services India Pvt Ltd operates across all major Indian states and union territories. Our logistics network spans 500+ cities ensuring seamless cargo movement nationwide." },
   { q: "What types of trucks are available?", a: "We offer a diverse fleet including open trucks, closed body trucks, trailers, containers, ODC vehicles, tempos, and specialized vehicle carriers to handle every type of cargo." },
   { q: "Is real-time cargo tracking available?", a: "Absolutely. We provide GPS-enabled real-time tracking for all shipments, giving you complete visibility over your cargo from pickup to delivery." },
   { q: "Do you handle ODC (Over Dimensional Cargo)?", a: "Yes. We specialize in ODC transportation with custom trailers, route surveys, and all necessary permits for oversized and heavy cargo movement across India." },
@@ -37,7 +37,7 @@ const faqs = [
   { q: "Can you transport vehicles and cars?", a: "Yes. We have specialized vehicle carriers and car transport services ensuring safe and scratch-free delivery of automobiles across India." },
   { q: "What locations do you cover in North India?", a: "We have strong operations across Delhi, Gurugram, Noida, Faridabad, Jaipur, Chandigarh, Ludhiana, Amritsar, Lucknow, and all NCR regions." },
   { q: "Do you provide container transportation?", a: "Yes. We handle 20ft and 40ft container transportation for import/export cargo, factory shifting, and bulk goods movement across India." },
-  { q: "What makes DTS different from other transporters?", a: "Our 25+ years of experience, modern fleet, pan-India network, 24/7 support, transparent pricing, and commitment to on-time delivery sets us apart." },
+  { q: "What makes Durga Transport Services India Pvt Ltd different from other transporters?", a: "Our 25+ years of experience, modern fleet, pan-India network, 24/7 support, transparent pricing, and commitment to on-time delivery sets us apart." },
   { q: "Do you offer freight transportation services?", a: "Yes. We provide comprehensive freight transportation including FTL (Full Truck Load) and PTL (Part Truck Load) services across all routes in India." },
 ]
 
@@ -62,15 +62,15 @@ const serviceImages: Record<string, string> = {
   "trailer-transportation": "/services/trailer-transportation.png",
   "tempo-transportation": "/services/tempo-transportation.png",
   "container-transportation": "/services/container-transportation.png",
-  "odc-transportation": "/services/truck-transportation.png", // fallback
+  "odc-transportation": "/services/odc-transportation.png",
   "vehicle-transportation": "/services/vehicle-transportation.png",
   "car-transportation": "/services/car-transportation.png",
-  "lorry-transportation": "/services/truck-transportation.png", // fallback
-  "logistics-services": "/hero/slide-2.png", // fallback to warehouse aerial
+  "lorry-transportation": "/services/lorry-transportation.png",
+  "logistics-services": "/services/logistics-services.png",
   "storage-facility": "/services/storage-facility.png",
-  "close-body-truck": "/services/truck-transportation.png", // fallback
+  "close-body-truck": "/services/close-body-truck.png",
   "freight-transportation": "/services/container-transportation.png", // fallback
-  "pan-india-logistics": "/hero/slide-1.png", // fallback to fleet
+  "pan-india-logistics": "/services/pan-india-logistics.png",
 }
 
 function Counter({ value, decimals = 0, suffix = "" }: { value: number; decimals?: number; suffix?: string }) {
@@ -106,9 +106,9 @@ function Counter({ value, decimals = 0, suffix = "" }: { value: number; decimals
 }
 
 const heroSlides = [
-  "/hero/relevant-1.png",
-  "/hero/relevant-2.png",
-  "/hero/relevant-3.png",
+  "/hero/slide-1.png",
+  "/hero/slide-2.png",
+  "/hero/slide-3.png",
 ]
 
 export default function Home() {
@@ -118,7 +118,7 @@ export default function Home() {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 8000) // Reduced carousel speed
+    }, 15000) // Slower carousel speed for readability
     return () => clearInterval(timer)
   }, [])
 
@@ -136,16 +136,17 @@ export default function Home() {
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1, scale: 1.1 }}
             exit={{ opacity: 0, transition: { duration: 1.5 } }}
-            transition={{ 
+            transition={{
               opacity: { duration: 1.5, ease: "easeInOut" },
-              scale: { duration: 10, ease: "linear" } 
+              scale: { duration: 20, ease: "linear" }
             }}
             className="absolute inset-0 z-0 origin-center"
           >
             <Image
               src={heroSlides[currentSlide]}
-              alt="Durga Transport Cinematic Concept"
+              alt="Durga Transport Services India Pvt Ltd Cinematic Concept"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -157,7 +158,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-48 md:pt-56 pb-20 w-full flex flex-col md:flex-row items-center justify-between">
           <motion.div initial="hidden" animate="visible" className="space-y-5 flex flex-col items-start text-left w-full max-w-3xl">
-            
+
             {/* Elegant Subdued Badge */}
             <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-4 px-6 py-2 rounded-full border border-white/20 text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-white/95 uppercase shadow bg-black/40 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-red)]" />
@@ -195,7 +196,7 @@ export default function Home() {
           {/* Carousel Progress Navigation */}
           <div className="hidden md:flex flex-col items-end gap-6 w-32 shrink-0">
             {heroSlides.map((_, idx) => (
-              <button 
+              <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className="group w-full flex items-center justify-end gap-4"
@@ -203,11 +204,11 @@ export default function Home() {
                 <span className={`text-xs font-bold transition-colors ${currentSlide === idx ? "text-white" : "text-white/30"}`}>0{idx + 1}</span>
                 <div className="relative w-16 h-1 bg-white/10 rounded-full overflow-hidden">
                   {currentSlide === idx && (
-                    <motion.div 
+                    <motion.div
                       key={`progress-${idx}`}
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
-                      transition={{ duration: 8, ease: "linear" }}
+                      transition={{ duration: 15, ease: "linear" }}
                       className="absolute left-0 top-0 bottom-0 bg-[var(--color-brand-red)]"
                     />
                   )}
@@ -226,7 +227,7 @@ export default function Home() {
         {/* Soft glowing ambient spots */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[var(--color-brand-red)]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-zinc-800/20 rounded-full blur-[120px] pointer-events-none" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-zinc-800">
             {[
@@ -234,8 +235,8 @@ export default function Home() {
               { value: 500, label: "Cities Connected", suffix: "+", sub: "Robust pan-India network" },
               { value: 1, label: "Million Deliveries", decimals: 1, suffix: "M+", sub: "Secure & on-time shipments" },
             ].map((stat, idx) => (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -265,7 +266,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
-                <Image src="/hero/main-hero.png" alt="About Durga Transport Services" fill className="object-cover" />
+                <Image
+                  src="/hero/main-hero.png"
+                  alt="About Durga Transport Services India Pvt Ltd"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 gold-accent rounded-2xl flex items-center justify-center shadow-lg">
                 <div className="text-center text-white">
@@ -276,12 +283,12 @@ export default function Home() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="space-y-6">
-              <span className="section-label">About Durga Transport</span>
+              <span className="section-label">About Durga Transport Services India Pvt Ltd</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight">
                 Enterprise Logistics, <br /><span className="text-[var(--color-brand-red)]">Delivered with Excellence</span>
               </h2>
               <p className="text-zinc-500 text-lg leading-relaxed">
-                Durga Transport Services India is a trusted logistics and transportation company providing dependable transportation solutions across India. We specialize in truck, trailer, container, ODC, vehicle, tempo, storage, and freight services.
+                Durga Transport Services India Pvt Ltd is a trusted logistics and transportation company providing dependable transportation solutions across India. We specialize in truck, trailer, container, ODC, vehicle, tempo, storage, and freight services.
               </p>
               <p className="text-zinc-500 leading-relaxed">
                 Our mission is to deliver safe, timely, and cost-effective logistics services while building long-term customer relationships through professionalism and reliability.
@@ -318,17 +325,18 @@ export default function Home() {
               <motion.div key={service.slug} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={idx % 3}>
                 <Link href={`/services/${service.slug}`} className="group block bg-white rounded-2xl border border-zinc-100 hover:border-[var(--color-brand-red)]/20 hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 overflow-hidden h-full">
                   <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-100">
-                    <Image 
-                      src={serviceImages[service.slug] || "/hero/slide-1.png"} 
+                    <Image
+                      src={serviceImages[service.slug] || "/hero/slide-1.png"}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 transition-opacity duration-500" />
-                    
+
                     {/* Official Logo Overlay for Branding */}
                     <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded shadow-sm border border-white/20">
-                      <Image src="/logo.png" alt="Durga Transport" width={80} height={24} className="object-contain h-5 w-auto" />
+                      <Image src="/logo.png" alt="Durga Transport Services India Pvt Ltd" width={80} height={24} className="object-contain h-5 w-auto" />
                     </div>
                   </div>
                   <div className="p-8">
@@ -342,7 +350,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="mt-16 text-center">
             <Link href="/services" className="inline-flex items-center justify-center gap-2 bg-white text-zinc-800 font-bold px-8 py-4 rounded-xl text-base border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 transition-all duration-300">
               View All Services
@@ -371,17 +379,23 @@ export default function Home() {
               { name: "ODC Fleet", img: "/hero/slide-1.png" },
             ].map((vehicle, idx) => (
               <motion.div key={idx} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={idx % 3} className="group relative rounded-2xl overflow-hidden bg-zinc-100 aspect-[4/3] cursor-pointer">
-                <Image src={vehicle.img} alt={vehicle.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+                <Image
+                  src={vehicle.img}
+                  alt={vehicle.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {/* Official Logo Overlay */}
                 <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded shadow-sm border border-white/20">
-                  <Image src="/logo.png" alt="Durga Transport" width={100} height={30} className="object-contain h-6 w-auto" />
+                  <Image src="/logo.png" alt="Durga Transport Services India Pvt Ltd" width={100} height={30} className="object-contain h-6 w-auto" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-6">
                   <h3 className="text-xl font-bold text-white">{vehicle.name}</h3>
-                  <p className="text-sm text-white/70 mt-1">DURGA TRANSPORT SERVICES</p>
+                  <p className="text-sm text-white/70 mt-1">DURGA TRANSPORT SERVICES INDIA PVT LTD</p>
                 </div>
               </motion.div>
             ))}
@@ -401,7 +415,13 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {industries.map((ind, idx) => (
               <motion.div key={idx} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={idx % 4} className="group relative bg-white rounded-2xl overflow-hidden border border-zinc-100 hover:border-[var(--color-brand-red)]/20 hover:shadow-xl transition-all duration-300 aspect-[4/5] cursor-pointer">
-                <Image src={ind.img} alt={ind.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                <Image
+                  src={ind.img}
+                  alt={ind.name}
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-5 text-center">
                   <h3 className="text-base md:text-lg font-bold text-white tracking-wide">{ind.name}</h3>
@@ -418,8 +438,8 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-[#1A1A1A] text-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[var(--color-brand-gold)] text-xs font-bold tracking-[0.25em] uppercase">Why Choose DTS</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">The DTS Advantage</h2>
+            <span className="text-[var(--color-brand-gold)] text-xs font-bold tracking-[0.25em] uppercase">Why Choose Durga Transport Services India Pvt Ltd</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">The Durga Transport Services India Pvt Ltd Advantage</h2>
             <p className="text-zinc-400 text-lg">What makes us India's most trusted logistics partner.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

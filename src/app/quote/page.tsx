@@ -221,7 +221,7 @@ export default function QuotePage() {
                 <div className="p-4 bg-zinc-50 rounded-2xl border border-zinc-150 flex gap-3 text-zinc-500">
                   <ShieldAlert className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
                   <p className="text-xs leading-relaxed font-normal">
-                    Durga Transport Services values privacy. Your corporate information is solely used to construct logistics schedules, routing options, and freight price proposals. No data is shared with outer commercial directories.
+                    Durga Transport Services India Pvt Ltd values privacy. Your corporate information is solely used to construct logistics schedules, routing options, and freight price proposals. No data is shared with outer commercial directories.
                   </p>
                 </div>
 

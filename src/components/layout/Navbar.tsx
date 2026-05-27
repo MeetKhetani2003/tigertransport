@@ -56,7 +56,7 @@ export function Navbar() {
         <Link href="/" className="relative shrink-0 flex items-center">
           <Image
             src="/logo.png"
-            alt="Durga Transport Services India"
+            alt="Durga Transport Services India Pvt Ltd"
             width={240}
             height={60}
             className={`object-contain transition-all duration-300 ${scrolled ? "h-12 md:h-14" : "h-14 md:h-16"} w-auto`}

@@ -39,8 +39,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service || !city) return {}
   
   return {
-    title: `${service.title} in ${city} | Top Logistics Services | Durga Transport`,
-    description: `Looking for ${service.title.toLowerCase()} in ${city}? Durga Transport Services India provides premium, secure, and enterprise-scale logistics solutions in ${city}.`,
+    title: `${service.title} in ${city} | Top Logistics Services | Durga Transport Services India Pvt Ltd`,
+    description: `Looking for ${service.title.toLowerCase()} in ${city}? Durga Transport Services India Pvt Ltd provides premium, secure, and enterprise-scale logistics solutions in ${city}.`,
+    keywords: [
+      `${service.title.toLowerCase()} in ${city.toLowerCase()}`,
+      `hire ${service.title.toLowerCase()} company in ${city.toLowerCase()}`,
+      `best ${service.title.toLowerCase()} near me`,
+      `transport services for ${service.title.toLowerCase()} in ${city.toLowerCase()}`,
+      `commercial ${service.title.toLowerCase()}`,
+      "logistics",
+      "transportation"
+    ],
     alternates: {
       canonical: `https://www.durgatransport.com/services/${serviceSlug}/${citySlug}`,
     },
@@ -61,7 +70,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
 
   const schemaData = generateServiceSchema(
     `${service.title} in ${city}`,
-    `Professional ${service.title.toLowerCase()} in ${city} by Durga Transport Services India.`
+    `Professional ${service.title.toLowerCase()} in ${city} by Durga Transport Services India Pvt Ltd.`
   )
 
   return (
@@ -105,7 +114,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               </h2>
               <div className="prose prose-lg dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Durga Transport Services India delivers industry-leading <strong>{service.title.toLowerCase()}</strong> to businesses and enterprises in <strong>{city}</strong>. Our robust operations in {city} ensure that your logistics requirements are met with unparalleled precision, speed, and safety.
+                  Durga Transport Services India Pvt Ltd delivers industry-leading <strong>{service.title.toLowerCase()}</strong> to businesses and enterprises in <strong>{city}</strong>. Our robust operations in {city} ensure that your logistics requirements are met with unparalleled precision, speed, and safety.
                 </p>
                 <p>
                   Recognized as a top logistics partner, we provide end-to-end support for all your freight movement needs in and around {city}. Our dedicated local fleet and experienced logistics personnel are equipped to handle complex supply chain challenges efficiently.

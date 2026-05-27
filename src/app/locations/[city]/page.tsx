@@ -27,8 +27,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return {}
   
   return {
-    title: `Top Transport Company in ${city} | Logistics Services | Durga Transport`,
-    description: `Looking for reliable transport services in ${city}? Durga Transport Services India offers premium logistics, truck transportation, and freight solutions in ${city}.`,
+    title: `Top Transport Company in ${city} | Logistics Services | Durga Transport Services India Pvt Ltd`,
+    description: `Looking for reliable transport services in ${city}? Durga Transport Services India Pvt Ltd offers premium logistics, truck transportation, and freight solutions in ${city}.`,
+    keywords: [
+      `transport company in ${city.toLowerCase()}`,
+      `logistics services in ${city.toLowerCase()}`,
+      `freight forwarder ${city.toLowerCase()}`,
+      `top transporters in ${city.toLowerCase()}`,
+      `truck booking ${city.toLowerCase()}`,
+      `cargo movement ${city.toLowerCase()}`
+    ],
     alternates: {
       canonical: `https://www.durgatransport.com/locations/${citySlug}`,
     },
@@ -88,7 +96,7 @@ export default async function CityPage({ params }: PageProps) {
               </h2>
               <div className="prose prose-lg dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
                 <p>
-                  As a leading logistics provider, Durga Transport Services India is proud to offer our comprehensive transport solutions to businesses in <strong>{city}</strong>. We understand the unique supply chain dynamics of {city} and provide reliable, scalable, and secure freight movement.
+                  As a leading logistics provider, Durga Transport Services India Pvt Ltd is proud to offer our comprehensive transport solutions to businesses in <strong>{city}</strong>. We understand the unique supply chain dynamics of {city} and provide reliable, scalable, and secure freight movement.
                 </p>
                 <p>
                   Our pan-India network ensures that your cargo moves seamlessly from {city} to any destination across the country. With a large fleet of modern vehicles and advanced tracking technology, we guarantee the safety and timely delivery of your consignments.

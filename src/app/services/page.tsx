@@ -28,15 +28,15 @@ const serviceImages: Record<string, string> = {
   "trailer-transportation": "/services/trailer-transportation.png",
   "tempo-transportation": "/services/tempo-transportation.png",
   "container-transportation": "/services/container-transportation.png",
-  "odc-transportation": "/services/truck-transportation.png", 
+  "odc-transportation": "/services/odc-transportation.png", 
   "vehicle-transportation": "/services/vehicle-transportation.png",
   "car-transportation": "/services/car-transportation.png",
-  "lorry-transportation": "/services/truck-transportation.png", 
-  "logistics-services": "/hero/relevant-2.png", 
+  "lorry-transportation": "/services/lorry-transportation.png", 
+  "logistics-services": "/services/logistics-services.png", 
   "storage-facility": "/services/storage-facility.png",
-  "close-body-truck": "/services/truck-transportation.png", 
+  "close-body-truck": "/services/close-body-truck.png", 
   "freight-transportation": "/services/container-transportation.png", 
-  "pan-india-logistics": "/hero/relevant-1.png", 
+  "pan-india-logistics": "/services/pan-india-logistics.png", 
 }
 
 const serviceDescriptions: Record<string, string> = {
@@ -63,8 +63,9 @@ export default function ServicesPage() {
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
             src="/hero/relevant-1.png"
-            alt="Durga Transport Services Fleet"
+            alt="Durga Transport Services India Pvt Ltd Fleet"
             fill
+            sizes="100vw"
             className="object-cover grayscale"
             priority
           />
@@ -109,6 +110,7 @@ export default function ServicesPage() {
                       src={img}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 p-3 bg-white/90 backdrop-blur rounded-xl shadow-md z-10">
@@ -134,7 +136,7 @@ export default function ServicesPage() {
                         View Details
                         <ArrowRight className="w-4 h-4" />
                       </Link>
-                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">DTS Cargo</span>
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Durga Transport Services India Pvt Ltd Cargo</span>
                     </div>
                   </div>
                 </motion.div>

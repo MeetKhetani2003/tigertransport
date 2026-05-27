@@ -17,14 +17,14 @@ export function generateLocalBusinessSchema(city?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "LogisticsService",
-    "name": "Durga Transport Services India",
+    "name": "Durga Transport Services India Pvt Ltd",
     "image": "https://www.durgatransport.com/project-assets/logo.png",
     "@id": "https://www.durgatransport.com",
     "url": "https://www.durgatransport.com",
     "telephone": "+919812773410",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "DTS House, Near Nahar Maruti Suzuki Workshop, Dhankot",
+      "streetAddress": "Durga Transport Services India Pvt Ltd House, Near Nahar Maruti Suzuki Workshop, Dhankot",
       "addressLocality": city || "Gurugram",
       "addressRegion": "Haryana",
       "postalCode": "122505",
@@ -59,7 +59,7 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
     "name": serviceName,
     "provider": {
       "@type": "Organization",
-      "name": "Durga Transport Services India"
+      "name": "Durga Transport Services India Pvt Ltd"
     },
     "description": serviceDescription
   }

@@ -25,12 +25,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service) return {}
   
   return {
-    title: `${service.title} in India | Durga Transport Services`,
-    description: `Professional ${service.title.toLowerCase()} across India. Reliable, secure, and enterprise-grade logistics by Durga Transport Services India.`,
+    title: `${service.title} in India | Durga Transport Services India Pvt Ltd`,
+    description: `Professional ${service.title.toLowerCase()} across India. Reliable, secure, and enterprise-grade logistics by Durga Transport Services India Pvt Ltd.`,
+    keywords: [
+      `${service.title.toLowerCase()} in india`,
+      `best ${service.title.toLowerCase()} company`,
+      `${service.title.toLowerCase()} transport services`,
+      `hire ${service.title.toLowerCase()}`,
+      `pan india ${service.title.toLowerCase()}`,
+      "logistics",
+      "transport"
+    ],
     alternates: {
       canonical: `https://www.durgatransport.com/services/${service.slug}`,
     },
   }
+}
+
+const serviceImages: Record<string, string> = {
+  "truck-transportation": "/services/truck-transportation.png",
+  "trailer-transportation": "/services/trailer-transportation.png",
+  "tempo-transportation": "/services/tempo-transportation.png",
+  "container-transportation": "/services/container-transportation.png",
+  "odc-transportation": "/services/odc-transportation.png",
+  "vehicle-transportation": "/services/vehicle-transportation.png",
+  "car-transportation": "/services/car-transportation.png",
+  "lorry-transportation": "/services/lorry-transportation.png",
+  "logistics-services": "/services/logistics-services.png",
+  "storage-facility": "/services/storage-facility.png",
+  "close-body-truck": "/services/close-body-truck.png",
+  "freight-transportation": "/services/container-transportation.png",
+  "pan-india-logistics": "/services/pan-india-logistics.png",
 }
 
 export default async function ServicePage({ params }: PageProps) {
@@ -43,8 +68,10 @@ export default async function ServicePage({ params }: PageProps) {
 
   const schemaData = generateServiceSchema(
     service.title,
-    `Professional ${service.title.toLowerCase()} across India by Durga Transport Services India.`
+    `Professional ${service.title.toLowerCase()} across India by Durga Transport Services India Pvt Ltd.`
   )
+
+  const serviceImg = serviceImages[service.slug] || "/hero/main-hero.png"
 
   return (
     <>
@@ -54,9 +81,10 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="relative w-full py-24 md:py-32 bg-zinc-900 flex items-center">
         <div className="absolute inset-0 z-0 opacity-40">
            <Image
-            src="/hero/main-hero.png"
+            src={serviceImg}
             alt={service.title}
             fill
+            sizes="100vw"
             className="object-cover grayscale"
             priority
           />
@@ -83,7 +111,7 @@ export default async function ServicePage({ params }: PageProps) {
               </h2>
               <div className="prose prose-lg dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
                 <p>
-                  At Durga Transport Services India, our <strong>{service.title.toLowerCase()}</strong> is designed to meet the rigorous demands of modern enterprise supply chains. We combine deep industry expertise with a robust national network to deliver exceptional reliability and speed.
+                  At Durga Transport Services India Pvt Ltd, our <strong>{service.title.toLowerCase()}</strong> is designed to meet the rigorous demands of modern enterprise supply chains. We combine deep industry expertise with a robust national network to deliver exceptional reliability and speed.
                 </p>
                 <p>
                   Whether you are moving raw materials, finished goods, or specialized equipment, our modern fleet and experienced logistics professionals ensure that your cargo reaches its destination safely and on time. We utilize advanced tracking systems to provide real-time visibility and dedicated account management for personalized service.

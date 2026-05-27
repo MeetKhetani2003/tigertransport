@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
             src="/hero/relevant-1.png"
-            alt="Contact Durga Transport Services"
+            alt="Contact Durga Transport Services India Pvt Ltd"
             fill
             className="object-cover grayscale"
             priority
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 {[
                   { icon: <Phone className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Phone Hotline", val: "+91 9812773410", link: "tel:+919812773410" },
                   { icon: <Mail className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Email Queries", val: "info@durgatransport.com", link: "mailto:info@durgatransport.com" },
-                  { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Corporate HQ", val: "Durga Transport Services, Transport Nagar, Delhi NCR, India", link: "#" },
+                  { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Corporate HQ", val: "Durga Transport Services India Pvt Ltd, Transport Nagar, Delhi NCR, India", link: "#" },
                   { icon: <Clock className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Office Timings", val: "24 Hours Operational Dispatch (Pan India)", link: "#" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 p-5 rounded-2xl border border-zinc-150 bg-zinc-50 hover:bg-zinc-50/50 transition-colors">

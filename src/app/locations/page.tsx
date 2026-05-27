@@ -23,8 +23,9 @@ export default function LocationsPage() {
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
             src="/hero/relevant-2.png"
-            alt="Durga Transport Nationwide Coverage"
+            alt="Durga Transport Services India Pvt Ltd Nationwide Coverage"
             fill
+            sizes="100vw"
             className="object-cover grayscale"
             priority
           />
