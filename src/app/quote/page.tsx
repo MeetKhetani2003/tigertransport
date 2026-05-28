@@ -20,6 +20,7 @@ export default function QuotePage() {
   })
   
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [success, setSuccess] = React.useState(false)
   const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null)
   const recaptchaRef = React.useRef<ReCAPTCHA>(null)
 
