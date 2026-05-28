@@ -11,28 +11,28 @@ const fleetCategories = [
     name: "Heavy Flatbed & Lowbed Trailers",
     capacity: "20 to 55 Metric Tons",
     usage: "ODC cargo, construction iron, heavy factory machinery, steel coils, and boiler tanks.",
-    image: "/services/trailer-transportation.png",
+    image: "/fleet/Heavy Flatbed & Lowbed Trailers Fleet.jpeg",
     spec: "Multi-axle mechanical/pneumatic suspension systems, custom tiedowns, and standard GPS setups."
   },
   {
     name: "Standard & High-Cube Containers",
     capacity: "15 to 30 Metric Tons",
     usage: "FMCG shipments, consumer appliances, export containers, clean raw materials, and electronics.",
-    image: "/services/container-transportation.png",
+    image: "/fleet/Standard & High Cube Container Fleet.jpeg",
     spec: "Fully sealed 20ft & 40ft structures with lock rods, weatherproof builds, and tamperproof sensors."
   },
   {
     name: "Close Body & Weatherproof Trucks",
     capacity: "7 to 16 Metric Tons",
     usage: "Pharmaceuticals, high-value commercial chemicals, textiles, and auto parts.",
-    image: "/services/truck-transportation.png",
+    image: "/fleet/waterproof closebody fleet.jpeg",
     spec: "Rigid steel/aluminum composite cabins, double lock rear gates, and shock absorption setups."
   },
   {
     name: "Intra-City Tempos & Small Carriers",
     capacity: "1 to 5 Metric Tons",
     usage: "Last mile retail supply, domestic household shifts, and urban warehouse transfers.",
-    image: "/services/tempo-transportation.png",
+    image: "/fleet/intercity fleet.jpeg",
     spec: "Sleek turning radii, direct city permit clearances, and standard loading ramps."
   }
 ]

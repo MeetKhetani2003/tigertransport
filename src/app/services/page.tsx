@@ -24,19 +24,19 @@ const serviceIcons: Record<string, React.ReactNode> = {
 }
 
 const serviceImages: Record<string, string> = {
-  "truck-transportation": "/services/truck-transportation.png",
-  "trailer-transportation": "/services/trailer-transportation.png",
-  "tempo-transportation": "/services/tempo-transportation.png",
-  "container-transportation": "/services/container-transportation.png",
-  "odc-transportation": "/services/odc-transportation.png", 
-  "vehicle-transportation": "/services/vehicle-transportation.png",
-  "car-transportation": "/services/car-transportation.png",
-  "lorry-transportation": "/services/lorry-transportation.png", 
-  "logistics-services": "/services/logistics-services.png", 
-  "storage-facility": "/services/storage-facility.png",
-  "close-body-truck": "/services/close-body-truck.png", 
-  "freight-transportation": "/services/container-transportation.png", 
-  "pan-india-logistics": "/services/pan-india-logistics.png", 
+  "truck-transportation": "/services/truck-transportation.jpeg",
+  "trailer-transportation": "/services/trailer transport.jpeg",
+  "tempo-transportation": "/services/tempo service.jpeg",
+  "container-transportation": "/services/container transportation.jpeg",
+  "odc-transportation": "/services/odc transportation.jpeg", 
+  "vehicle-transportation": "/services/vehicle transport.jpeg",
+  "car-transportation": "/services/car transport.jpeg",
+  "lorry-transportation": "/services/lori transportation.jpeg", 
+  "logistics-services": "/services/Logistics sercice.jpeg", 
+  "storage-facility": "/services/storage facility.jpeg",
+  "close-body-truck": "/services/close body truck.jpeg", 
+  "freight-transportation": "/services/freight service.jpeg", 
+  "pan-india-logistics": "/services/pan india.jpeg", 
 }
 
 const serviceDescriptions: Record<string, string> = {
@@ -62,7 +62,7 @@ export default function ServicesPage() {
       <section className="relative w-full py-32 md:py-44 bg-[#0B0B0B] overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
-            src="/hero/relevant-1.png"
+            src="/hero/slide-1.png"
             alt="Durga Transport Services India Pvt Ltd Fleet"
             fill
             sizes="100vw"
@@ -93,7 +93,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData.map((service, idx) => {
               const icon = serviceIcons[service.slug] || <Truck className="w-8 h-8 text-[var(--color-brand-red)]" />
-              const img = serviceImages[service.slug] || "/hero/relevant-1.png"
+              const img = serviceImages[service.slug] || "/hero/slide-1.png"
               const desc = serviceDescriptions[service.slug] || "Professional logistics solution."
               
               return (
@@ -128,15 +128,15 @@ export default function ServicesPage() {
                       </p>
                     </div>
                     
-                    <div className="pt-2 border-t border-zinc-100 flex items-center justify-between">
+                    <div className="pt-4 mt-auto border-t border-zinc-100 flex items-center justify-between">
                       <Link
                         href={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-800 hover:text-[var(--color-brand-red)] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-brand-red)] hover:text-red-700 transition-colors shrink-0"
                       >
                         View Details
                         <ArrowRight className="w-4 h-4" />
                       </Link>
-                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Durga Transport Services India Pvt Ltd Cargo</span>
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest truncate ml-4">Enterprise Logistics</span>
                     </div>
                   </div>
                 </motion.div>

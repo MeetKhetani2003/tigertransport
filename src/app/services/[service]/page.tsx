@@ -18,6 +18,8 @@ export async function generateStaticParams() {
   }))
 }
 
+import { generateServiceSpecificKeywords } from "@/lib/seo-utils"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params
   const service = servicesData.find((s) => s.slug === resolvedParams.service)
@@ -25,37 +27,53 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service) return {}
   
   return {
-    title: `${service.title} in India | Durga Transport Services India Pvt Ltd`,
-    description: `Professional ${service.title.toLowerCase()} across India. Reliable, secure, and enterprise-grade logistics by Durga Transport Services India Pvt Ltd.`,
-    keywords: [
-      `${service.title.toLowerCase()} in india`,
-      `best ${service.title.toLowerCase()} company`,
-      `${service.title.toLowerCase()} transport services`,
-      `hire ${service.title.toLowerCase()}`,
-      `pan india ${service.title.toLowerCase()}`,
-      "logistics",
-      "transport"
-    ],
+    title: `${service.title} Services in India`,
+    description: `Professional ${service.title.toLowerCase()} across India. Reliable, secure, and enterprise-grade logistics by Durga Transport Services India Pvt Ltd. Serving 500+ cities.`,
+    keywords: generateServiceSpecificKeywords(service.title),
     alternates: {
       canonical: `https://www.durgatransport.com/services/${service.slug}`,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+      }
+    }
   }
 }
 
 const serviceImages: Record<string, string> = {
-  "truck-transportation": "/services/truck-transportation.png",
-  "trailer-transportation": "/services/trailer-transportation.png",
-  "tempo-transportation": "/services/tempo-transportation.png",
-  "container-transportation": "/services/container-transportation.png",
-  "odc-transportation": "/services/odc-transportation.png",
-  "vehicle-transportation": "/services/vehicle-transportation.png",
-  "car-transportation": "/services/car-transportation.png",
-  "lorry-transportation": "/services/lorry-transportation.png",
-  "logistics-services": "/services/logistics-services.png",
-  "storage-facility": "/services/storage-facility.png",
-  "close-body-truck": "/services/close-body-truck.png",
-  "freight-transportation": "/services/container-transportation.png",
-  "pan-india-logistics": "/services/pan-india-logistics.png",
+  "truck-transportation": "/services/truck-transportation.jpeg",
+  "trailer-transportation": "/services/trailer transport.jpeg",
+  "tempo-transportation": "/services/tempo service.jpeg",
+  "container-transportation": "/services/container transportation.jpeg",
+  "odc-transportation": "/services/odc transportation.jpeg",
+  "vehicle-transportation": "/services/vehicle transport.jpeg",
+  "car-transportation": "/services/car transport.jpeg",
+  "lorry-transportation": "/services/lori transportation.jpeg",
+  "logistics-services": "/services/Logistics sercice.jpeg",
+  "storage-facility": "/services/storage facility.jpeg",
+  "close-body-truck": "/services/close body truck.jpeg",
+  "freight-transportation": "/services/freight service.jpeg",
+  "pan-india-logistics": "/services/pan india.jpeg",
+}
+const serviceHeroImages: Record<string, string> = {
+  "truck-transportation": "/hero/slide-1.png",
+  "trailer-transportation": "/hero/slide-2.png",
+  "tempo-transportation": "/fleet/intercity fleet.jpeg",
+  "container-transportation": "/fleet/Standard & High Cube Container Fleet.jpeg",
+  "odc-transportation": "/Industries/Heavy Machinery Industry.jpeg",
+  "vehicle-transportation": "/Industries/automobile.jpeg",
+  "car-transportation": "/Industries/automobile.jpeg",
+  "lorry-transportation": "/Industries/Construction Industry.jpeg",
+  "logistics-services": "/hero/main-hero.png",
+  "storage-facility": "/Industries/retail distribution.jpeg",
+  "close-body-truck": "/fleet/waterproof closebody fleet.jpeg",
+  "freight-transportation": "/hero/slide-3.png",
+  "pan-india-logistics": "/hero/main-hero.png",
 }
 
 export default async function ServicePage({ params }: PageProps) {
@@ -71,30 +89,38 @@ export default async function ServicePage({ params }: PageProps) {
     `Professional ${service.title.toLowerCase()} across India by Durga Transport Services India Pvt Ltd.`
   )
 
-  const serviceImg = serviceImages[service.slug] || "/hero/main-hero.png"
+  const serviceHeroImg = serviceHeroImages[service.slug] || "/hero/main-hero.png"
+  const serviceImg = serviceImages[service.slug] || "/hero/slide-1.png"
 
   return (
     <>
       <Schema data={schemaData} />
       
       {/* Service Hero */}
-      <section className="relative w-full py-24 md:py-32 bg-zinc-900 flex items-center">
-        <div className="absolute inset-0 z-0 opacity-40">
+      <section className="relative w-full pt-32 pb-24 md:pt-48 md:pb-32 bg-black overflow-hidden">
+        <div className="absolute inset-0 z-0">
            <Image
-            src={serviceImg}
+            src={serviceHeroImg}
             alt={service.title}
             fill
             sizes="100vw"
-            className="object-cover grayscale"
+            className="object-cover opacity-90 scale-105"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent md:w-3/4" />
         </div>
+        
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-heading">
+          <div className="max-w-4xl space-y-6">
+            <div className="inline-flex items-center gap-3">
+              <span className="w-8 h-1 bg-[var(--color-brand-red)] rounded-full" />
+              <span className="text-sm font-bold tracking-widest text-[var(--color-brand-red)] uppercase">Enterprise Logistics Service</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
               {service.title}
             </h1>
-            <p className="text-xl text-zinc-300">
+            <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-light">
               Enterprise-grade {service.title.toLowerCase()} tailored for your specific supply chain requirements.
             </p>
           </div>
@@ -102,23 +128,40 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
 
       {/* Content Section */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-24 bg-white relative">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-8">
-              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white font-heading">
-                Comprehensive {service.title} Solutions
-              </h2>
-              <div className="prose prose-lg dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
-                <p>
-                  At Durga Transport Services India Pvt Ltd, our <strong>{service.title.toLowerCase()}</strong> is designed to meet the rigorous demands of modern enterprise supply chains. We combine deep industry expertise with a robust national network to deliver exceptional reliability and speed.
-                </p>
-                <p>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            {/* Main Content */}
+            <div className="lg:col-span-8 space-y-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6 tracking-tight">
+                  Comprehensive {service.title} Solutions
+                </h2>
+                
+                <div className="pl-6 border-l-4 border-[var(--color-brand-red)] mb-8">
+                  <p className="text-zinc-600 text-lg leading-relaxed font-medium">
+                    At Durga Transport Services India Pvt Ltd, our {service.title.toLowerCase()} is designed to meet the rigorous demands of modern enterprise supply chains. We combine deep industry expertise with a robust national network to deliver exceptional reliability and speed.
+                  </p>
+                </div>
+                
+                <p className="text-zinc-500 text-lg leading-relaxed mb-8">
                   Whether you are moving raw materials, finished goods, or specialized equipment, our modern fleet and experienced logistics professionals ensure that your cargo reaches its destination safely and on time. We utilize advanced tracking systems to provide real-time visibility and dedicated account management for personalized service.
                 </p>
-                
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mt-8 mb-4">Key Benefits of Our {service.title}</h3>
-                <ul className="space-y-3 list-none p-0">
+              </div>
+              
+              {/* Image break */}
+              <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl border border-zinc-100">
+                 <Image
+                  src={serviceImg}
+                  alt={`${service.title} in action`}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+              
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-8 tracking-tight">Key Service Benefits</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     "Pan India coverage with dedicated routes.",
                     "Real-time GPS tracking and dedicated support.",
@@ -126,29 +169,45 @@ export default async function ServicePage({ params }: PageProps) {
                     "Customized solutions for complex freight.",
                     "Strict adherence to safety and compliance standards."
                   ].map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-[var(--color-brand-red)] shrink-0" />
-                      <span>{benefit}</span>
-                    </li>
+                    <div key={i} className={`flex items-start gap-4 p-5 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-red-100 hover:bg-red-50/30 transition-colors ${i === 4 ? "sm:col-span-2" : ""}`}>
+                      <CheckCircle2 className="w-6 h-6 text-[var(--color-brand-red)] shrink-0 mt-0.5" />
+                      <span className="text-zinc-700 font-semibold text-base leading-snug">{benefit}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
             
-            {/* Sidebar CTA */}
-            <div className="space-y-6">
-              <div className="bg-zinc-50 dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-100 dark:border-zinc-800">
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white font-heading mb-4">Get a Quote</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-                  Need {service.title.toLowerCase()}? Contact our logistics experts for a customized quote.
-                </p>
-                <div className="space-y-4">
-                  <Button size="lg" className="w-full bg-[var(--color-brand-red)] hover:bg-red-700 h-14" asChild>
-                    <Link href="/quote">Request Quote <ArrowRight className="ml-2 w-4 h-4" /></Link>
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full h-14" asChild>
-                    <a href="tel:+919812773410">Call +91 9812773410</a>
-                  </Button>
+            {/* Sticky Sidebar CTA */}
+            <div className="lg:col-span-4">
+              <div className="sticky top-32 space-y-6">
+                <div className="bg-zinc-900 p-8 rounded-3xl shadow-2xl overflow-hidden relative">
+                  {/* Decorative background element */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-brand-red)] rounded-full blur-[80px] opacity-20 pointer-events-none" />
+                  
+                  <h3 className="text-2xl font-bold text-white mb-3">Request a Quote</h3>
+                  <p className="text-zinc-400 mb-8 text-sm leading-relaxed">
+                    Need {service.title.toLowerCase()}? Contact our logistics experts today for a customized and competitive proposal.
+                  </p>
+                  <div className="space-y-4 relative z-10">
+                    <Link href="/quote" className="group flex items-center justify-center gap-3 w-full bg-[var(--color-brand-red)] text-white font-semibold h-14 rounded-xl hover:bg-red-700 transition-colors shadow-lg hover:shadow-red-500/20">
+                      Get Pricing <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <a href="tel:+919812773410" className="flex items-center justify-center gap-3 w-full bg-white/5 text-white font-semibold h-14 rounded-xl hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-md">
+                      Call +91 9812773410
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Secondary Help Card */}
+                <div className="bg-zinc-50 p-6 rounded-3xl border border-zinc-100 flex items-center gap-4">
+                   <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+                     <span className="text-xl font-bold text-[var(--color-brand-red)]">24</span>
+                   </div>
+                   <div>
+                     <div className="font-bold text-zinc-900">24/7 Support Desk</div>
+                     <div className="text-sm text-zinc-500">Always here to help you</div>
+                   </div>
                 </div>
               </div>
             </div>

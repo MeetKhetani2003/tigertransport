@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ClipboardList, ArrowRight, CheckCircle2, ShieldAlert } from "lucide-react"
+import ReCAPTCHA from "react-google-recaptcha"
 import citiesData from "../../../data/cities.json"
 
 export default function QuotePage() {
@@ -18,23 +19,53 @@ export default function QuotePage() {
     email: ""
   })
   
-  const [success, setSuccess] = React.useState(false)
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null)
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSuccess(true)
-    setTimeout(() => {
-      setSuccess(false)
-      setFormData({
-        cargoType: "truck-transportation",
-        origin: "Delhi",
-        destination: "Mumbai",
-        weight: "",
-        businessName: "",
-        phone: "",
-        email: ""
+    
+    if (!recaptchaToken) {
+      alert("Please complete the reCAPTCHA verification.")
+      return
+    }
+    
+    setIsSubmitting(true)
+    
+    try {
+      const payload = { ...formData, recaptchaToken }
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       })
-    }, 5500)
+
+      if (response.ok) {
+        setSuccess(true)
+        setTimeout(() => {
+          setSuccess(false)
+          setFormData({
+            cargoType: "truck-transportation",
+            origin: "Delhi",
+            destination: "Mumbai",
+            weight: "",
+            businessName: "",
+            phone: "",
+            email: ""
+          })
+          if (recaptchaRef.current) recaptchaRef.current.reset()
+          setRecaptchaToken(null)
+        }, 5500)
+      } else {
+        alert("Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error submitting quote:", error)
+      alert("Failed to submit quote.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -225,11 +256,20 @@ export default function QuotePage() {
                   </p>
                 </div>
 
+                <div className="flex justify-center my-4 overflow-hidden rounded-xl">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || ""}
+                    onChange={(token) => setRecaptchaToken(token)}
+                  />
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-[var(--color-brand-red)] text-white font-semibold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-red-700 transition-all shadow-md hover:shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full flex items-center justify-center gap-2 bg-[var(--color-brand-red)] text-white font-semibold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-red-700 transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Generate Estimate
+                  {isSubmitting ? "Processing..." : "Generate Estimate"}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>

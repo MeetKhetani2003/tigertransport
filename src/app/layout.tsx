@@ -16,29 +16,32 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+import { generateDynamicKeywords } from "@/lib/seo-utils";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.durgatransport.com"),
   title: {
     template: "%s | Durga Transport Services India Pvt Ltd",
     default: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
   },
-  description: "India's Trusted Transport & Logistics Partner. Reliable transportation, freight movement and logistics solutions across India.",
-  keywords: [
-    "logistics company india",
-    "transport services",
-    "freight forwarder india",
-    "transport company",
+  description: "India's Trusted Transport & Logistics Partner. Reliable transportation, freight movement and logistics solutions across India. Serving 500+ cities.",
+  keywords: generateDynamicKeywords([
     "durga transport",
-    "pan india transport",
-    "trucking services india",
-    "supply chain solutions",
-    "transport services in junagadh",
-    "logistics company in rajkot",
-    "transport company in ahmedabad",
-    "freight forwarders in kanpur",
-    "truck booking in lucknow",
-    "best transporters in delhi",
-    "transport services pan india"
-  ],
+    "transport services in india",
+  ]),
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
     description: "India's Trusted Transport & Logistics Partner. Reliable transportation, freight movement and logistics solutions across India.",
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Durga Transport Services India Pvt Ltd",
     images: [
       {
-        url: "https://www.durgatransport.com/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Durga Transport Services India Pvt Ltd Logo",
@@ -59,7 +62,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Durga Transport Services India Pvt Ltd",
     description: "India's Trusted Transport & Logistics Partner.",
-    images: ["https://www.durgatransport.com/logo.png"],
+    images: ["/logo.png"],
+  },
+  alternates: {
+    canonical: "https://www.durgatransport.com",
   },
 };
 

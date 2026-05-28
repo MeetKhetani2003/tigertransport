@@ -2,7 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { MessageCircle } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 export function WhatsAppCTA() {
   const phoneNumber = "919812773410"
@@ -20,10 +20,10 @@ export function WhatsAppCTA() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 group"
+        className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#22bf5b] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:scale-110 transition-all duration-300 group"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-8 h-8" />
+        <FaWhatsapp className="w-8 h-8" />
         
         {/* Tooltip */}
         <span className="absolute right-full mr-4 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white text-sm font-medium px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap hidden md:block">

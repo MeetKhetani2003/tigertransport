@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Phone, Mail, MapPin, Clock, Send, ShieldCheck } from "lucide-react"
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ContactPage() {
   const [formData, setFormData] = React.useState({
@@ -17,13 +18,45 @@ export default function ContactPage() {
   
   const [submitted, setSubmitted] = React.useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null)
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" })
-    }, 4000)
+    
+    if (!recaptchaToken) {
+      alert("Please complete the reCAPTCHA verification.")
+      return
+    }
+
+    setIsSubmitting(true)
+    
+    try {
+      const payload = { ...formData, recaptchaToken }
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({ name: "", email: "", phone: "", company: "", message: "" })
+          if (recaptchaRef.current) recaptchaRef.current.reset()
+          setRecaptchaToken(null)
+        }, 4000)
+      } else {
+        alert("Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error)
+      alert("Failed to submit message.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -32,7 +65,7 @@ export default function ContactPage() {
       <section className="relative w-full py-32 md:py-44 bg-[#0B0B0B] overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
-            src="/hero/relevant-1.png"
+            src="/hero/slide-2.png"
             alt="Contact Durga Transport Services India Pvt Ltd"
             fill
             className="object-cover grayscale"
@@ -179,11 +212,20 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  <div className="flex justify-center my-4 overflow-hidden rounded-xl">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || ""}
+                      onChange={(token) => setRecaptchaToken(token)}
+                    />
+                  </div>
+
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-[var(--color-brand-red)] text-white font-semibold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-red-700 transition-all shadow-md hover:shadow-lg"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 bg-[var(--color-brand-red)] text-white font-semibold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-red-700 transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Submit Operation Request
+                    {isSubmitting ? "Sending..." : "Submit Operation Request"}
                     <Send className="w-4 h-4" />
                   </button>
                 </form>

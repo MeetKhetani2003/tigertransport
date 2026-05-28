@@ -54,7 +54,7 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-zinc-100">
-                <Image src="/hero/relevant-1.png" alt="Durga Transport Services India Pvt Ltd Express Route" fill className="object-cover" />
+                <Image src="/fleet/waterproof closebody fleet.jpeg" alt="Durga Transport Services India Pvt Ltd Express Route" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-[var(--color-brand-red)] rounded-2xl flex flex-col items-center justify-center shadow-lg p-4">
                 <div className="text-4xl font-bold text-white tracking-tight">25+</div>

@@ -113,6 +113,8 @@ export function Navbar() {
           className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-xl transition-colors hover:bg-zinc-100"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -140,6 +142,7 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
             />
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
