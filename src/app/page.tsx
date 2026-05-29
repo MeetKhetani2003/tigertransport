@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { ArrowRight, Truck, Container, CarFront, Warehouse, Shield, Clock, MapPin, Phone, PhoneCall, ChevronDown, CheckCircle2, Users, Headphones, Eye, Award, Star, Quote } from "lucide-react"
 import servicesData from "../../data/services.json"
+import citiesData from "../../data/cities.json"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
@@ -599,7 +600,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: <Headphones className="w-6 h-6" />, title: "24/7 Support", desc: "Round-the-clock dedicated support for all your logistics needs." },
-              { icon: <MapPin className="w-6 h-6" />, title: "Pan India Coverage", desc: "Operations spanning 500+ cities across every major Indian state." },
+              { icon: <MapPin className="w-6 h-6" />, title: "Pan India Coverage", desc: `Operations spanning ${citiesData.length}+ cities across every major Indian state.` },
               { icon: <Shield className="w-6 h-6" />, title: "Safe & Insured", desc: "Comprehensive cargo insurance and GPS-tracked secure transport." },
               { icon: <Users className="w-6 h-6" />, title: "Expert Team", desc: "25+ years of logistics expertise and industry-trained professionals." },
               { icon: <Eye className="w-6 h-6" />, title: "Full Transparency", desc: "Real-time tracking, clear pricing, and proactive communication." },

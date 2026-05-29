@@ -36,7 +36,7 @@ export default function IndustriesPage() {
       <section className="relative w-full py-32 md:py-44 bg-[#0B0B0B] overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
-            src="/hero/slide-3.png"
+            src="/Industries/infrastructure.jpeg"
             alt="Durga Transport Services India Pvt Ltd Industries"
             fill
             sizes="100vw"
