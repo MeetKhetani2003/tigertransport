@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "container hauling lucknow",
     "commercial transport delhi"
   ],
+  alternates: {
+    canonical: "https://www.durgatransport.com/services",
+  },
 };
 
 export default function ServicesLayout({

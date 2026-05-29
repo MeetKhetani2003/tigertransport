@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "transport price lucknow",
     "shipping quote delhi"
   ],
+  alternates: {
+    canonical: "https://www.durgatransport.com/quote",
+  },
 };
 
 export default function QuoteLayout({

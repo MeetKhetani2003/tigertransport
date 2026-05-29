@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "logistics hubs lucknow",
     "transport offices delhi"
   ],
+  alternates: {
+    canonical: "https://www.durgatransport.com/locations",
+  },
 };
 
 export default function LocationsLayout({

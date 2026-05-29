@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "transport contact number lucknow",
     "truck booking phone delhi"
   ],
+  alternates: {
+    canonical: "https://www.durgatransport.com/contact",
+  },
 };
 
 export default function ContactLayout({

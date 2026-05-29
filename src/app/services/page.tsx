@@ -113,9 +113,7 @@ export default function ServicesPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4 p-3 bg-white/90 backdrop-blur rounded-xl shadow-md z-10">
-                      {icon}
-                    </div>
+
                   </div>
                   
                   <div className="p-6 flex flex-col flex-grow justify-between gap-4">

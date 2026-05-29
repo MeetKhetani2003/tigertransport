@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "open truck lucknow",
     "odc vehicle delhi"
   ],
+  alternates: {
+    canonical: "https://www.durgatransport.com/fleet",
+  },
 };
 
 export default function FleetLayout({

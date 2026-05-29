@@ -9,11 +9,11 @@ import servicesData from "../../data/services.json"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
-  visible: (i: number) => ({ 
-    opacity: 1, 
-    y: 0, 
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
     filter: "blur(0px)",
-    transition: { delay: i * 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } 
+    transition: { delay: i * 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
   })
 }
 
@@ -375,7 +375,7 @@ export default function Home() {
               {/* Decorative Background Elements */}
               <div className="absolute -inset-4 bg-zinc-50 rounded-[2.5rem] -z-10 transform rotate-2" />
               <div className="absolute -inset-4 bg-[var(--color-brand-red)]/5 rounded-[2.5rem] -z-10 transform -rotate-2" />
-              
+
               <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl shadow-zinc-200/50 border-[6px] border-white">
                 <Image
                   src="/hero/main-hero.png"
@@ -385,9 +385,9 @@ export default function Home() {
                   className="object-cover hover:scale-105 transition-transform duration-1000 ease-out"
                 />
               </div>
-              
+
               {/* Modern Floating Trust Card */}
-              <div className="absolute -bottom-6 right-4 sm:-right-8 bg-white/95 backdrop-blur-xl p-5 rounded-2xl shadow-2xl shadow-zinc-200/50 border border-zinc-100 flex items-center gap-4">
+              <div className="absolute -bottom-12 sm:-bottom-10 left-6 sm:-right-8 bg-white/95 backdrop-blur-xl p-2 rounded-2xl shadow-2xl shadow-zinc-200/50 border border-zinc-100 flex items-center gap-4">
                 <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0 text-[var(--color-brand-red)]">
                   <Shield className="w-6 h-6" />
                 </div>
@@ -403,21 +403,21 @@ export default function Home() {
                 <span className="w-8 h-1 bg-[var(--color-brand-red)] rounded-full" />
                 <span className="text-sm font-bold tracking-widest text-[var(--color-brand-red)] uppercase">About Durga Transport Services India Pvt Ltd</span>
               </div>
-              
+
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-[1.15] tracking-tight">
                 Enterprise Logistics, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-brand-red)] to-red-600">Delivered with Excellence</span>
               </h2>
-              
+
               <div className="pl-6 border-l-4 border-[var(--color-brand-red)]">
                 <p className="text-zinc-600 text-lg leading-relaxed font-medium">
                   Durga Transport Services India Pvt Ltd is a trusted logistics and transportation company providing dependable transportation solutions across India. We specialize in truck, trailer, container, ODC, vehicle, tempo, storage, and freight services.
                 </p>
               </div>
-              
+
               <p className="text-zinc-500 text-base leading-relaxed">
                 Our mission is to deliver safe, timely, and cost-effective logistics services while building long-term customer relationships through professionalism and reliability.
               </p>
-              
+
               <div className="grid sm:grid-cols-2 gap-4 pt-4">
                 {["Nationwide Network Spanning 500+ Cities", "Modern Fleet with GPS Tracking", "24/7 Dedicated Support Team"].map((item, i) => (
                   <div key={i} className={`flex items-start gap-3 p-4 rounded-2xl bg-zinc-50 border border-zinc-100 ${i === 2 ? "sm:col-span-2 sm:w-1/2" : ""}`}>
@@ -426,7 +426,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              
+
               <div className="pt-6">
                 <Link href="/about" className="group inline-flex items-center justify-center gap-3 bg-zinc-900 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-[var(--color-brand-red)] transition-all duration-300 shadow-lg hover:shadow-red-500/20">
                   Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -461,12 +461,8 @@ export default function Home() {
                       className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                    
-                    {/* Floating Icon */}
-                    <div className="absolute top-4 right-4 z-20 w-12 h-12 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center text-[var(--color-brand-red)] shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                      {serviceIcons[service.slug] || <Truck className="w-6 h-6" />}
-                    </div>
-                    
+
+
                     <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                       <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-[var(--color-brand-red)] px-3 py-1.5 rounded-full">
                         Enterprise Grade
@@ -478,15 +474,15 @@ export default function Home() {
                       <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-3 group-hover:text-[var(--color-brand-red)] transition-colors">{service.title}</h3>
                       <p className="text-zinc-500 text-sm leading-relaxed font-normal">Reliable and professional {service.title.toLowerCase()} tailored for enterprise scale across India.</p>
                     </div>
-                    
+
                     <div className="mt-8 pt-4 border-t border-zinc-100 flex items-center justify-between">
                       <span className="inline-flex items-center gap-2 text-sm font-bold text-zinc-800 group-hover:text-[var(--color-brand-red)] transition-colors">
                         Explore Service <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                       </span>
                       <div className="w-8 h-8 rounded-full bg-zinc-50 flex items-center justify-center group-hover:bg-red-50 transition-colors">
-                         <span className="text-[10px] text-zinc-400 group-hover:text-[var(--color-brand-red)] font-bold">
-                           {String(idx + 1).padStart(2, '0')}
-                         </span>
+                        <span className="text-[10px] text-zinc-400 group-hover:text-[var(--color-brand-red)] font-bold">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -506,7 +502,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 mt-3 mb-4 tracking-tight">Modern Fleet for Every Need</h2>
             <p className="text-zinc-500 text-lg leading-relaxed">A diverse, well-maintained enterprise fleet ready for any logistics challenge.</p>
           </div>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               { name: "Flatbed Trailers", img: "/fleet/Heavy Flatbed & Lowbed Trailers Fleet.jpeg" },
@@ -514,13 +510,13 @@ export default function Home() {
               { name: "Close Body Trucks", img: "/fleet/waterproof closebody fleet.jpeg" },
               { name: "Intra-City Tempos", img: "/fleet/intercity fleet.jpeg" },
             ].map((vehicle, idx) => (
-              <motion.div 
-                key={idx} 
-                initial="hidden" 
-                whileInView="visible" 
-                viewport={{ once: true }} 
-                variants={fadeUp} 
-                custom={idx % 3} 
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={idx % 3}
                 className="group relative bg-zinc-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 aspect-[4/3] cursor-pointer border border-zinc-200/50"
               >
                 <Image
@@ -530,17 +526,13 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.16,1,0.3,1]"
                 />
-                
+
                 {/* Elegant Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                
+
                 {/* Hover Glow */}
                 <div className="absolute inset-0 bg-[var(--color-brand-red)]/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
 
-                {/* Top Action Icon */}
-                <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowRight className="w-4 h-4 text-white -rotate-45" />
-                </div>
 
                 {/* Bottom Content */}
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -553,11 +545,11 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="mt-16 text-center">
-             <Link href="/fleet" className="inline-flex items-center justify-center gap-3 bg-zinc-900 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-[var(--color-brand-red)] hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 uppercase tracking-widest">
-               Explore Full Fleet Capabilities <ArrowRight className="w-4 h-4" />
-             </Link>
+            <Link href="/fleet" className="inline-flex items-center justify-center gap-3 bg-zinc-900 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-[var(--color-brand-red)] hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 uppercase tracking-widest">
+              Explore Full Fleet Capabilities <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -582,10 +574,7 @@ export default function Home() {
                   className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.16,1,0.3,1]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowRight className="w-3 h-3 text-white -rotate-45" />
-                </div>
+
 
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-5 md:p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-8 h-1 bg-[var(--color-brand-red)] mb-4 rounded-full transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
@@ -635,26 +624,26 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mt-3 mb-4">Trusted by Industry Leaders</h2>
           <p className="text-zinc-500 text-lg">See what our enterprise partners say about our logistics services.</p>
         </div>
-        
+
         {/* CSS-only infinite marquee */}
         <div className="relative w-full flex overflow-hidden">
           {/* Fading Edges */}
           <div className="absolute top-0 left-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-zinc-50 to-transparent z-10 pointer-events-none" />
           <div className="absolute top-0 right-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-zinc-50 to-transparent z-10 pointer-events-none" />
-          
-          <motion.div 
+
+          <motion.div
             className="flex gap-6 md:gap-8 px-4"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ 
+            transition={{
               ease: "linear",
               duration: 30, // Adjust speed
-              repeat: Infinity 
+              repeat: Infinity
             }}
           >
             {/* Double the array for seamless infinite scroll */}
             {[...testimonials, ...testimonials].map((testimonial, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="w-[320px] md:w-[400px] shrink-0 bg-white p-8 rounded-3xl shadow-sm border border-zinc-100 flex flex-col gap-6"
               >
                 <div className="flex text-yellow-400">
@@ -693,8 +682,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 h-fit">
-                <button 
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)} 
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full text-left flex items-start justify-between p-5 md:p-6 gap-4"
                   aria-expanded={openFaq === idx}
                   aria-controls={`faq-answer-${idx}`}
@@ -705,14 +694,14 @@ export default function Home() {
                 </button>
                 <AnimatePresence>
                   {openFaq === idx && (
-                    <motion.div 
+                    <motion.div
                       id={`faq-answer-${idx}`}
                       role="region"
                       aria-labelledby={`faq-button-${idx}`}
-                      initial={{ height: 0, opacity: 0 }} 
-                      animate={{ height: "auto", opacity: 1 }} 
-                      exit={{ height: 0, opacity: 0 }} 
-                      transition={{ duration: 0.3 }} 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
                       <div className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-500 text-sm leading-relaxed border-t border-zinc-100 pt-4">{faq.a}</div>
