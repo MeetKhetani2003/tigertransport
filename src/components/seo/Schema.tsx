@@ -24,7 +24,7 @@ export function generateLocalBusinessSchema(city?: string) {
     "telephone": "+919812773410",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Durga Transport Services India Pvt Ltd House, Near Nahar Maruti Suzuki Workshop, Dhankot",
+      "streetAddress": "DTS House, Near Nahar Maruti Suzuki Work Shop, Dhankot",
       "addressLocality": city || "Gurugram",
       "addressRegion": "Haryana",
       "postalCode": "122505",

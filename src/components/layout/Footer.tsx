@@ -52,13 +52,25 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                   <MapPin className="w-4 h-4 text-[var(--color-brand-red)]" />
                 </div>
-                <span className="max-w-[240px] pt-1">Durga Transport Services House, Near Nahar Maruti Suzuki, Dhankot, Gurugram 122505</span>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-[var(--color-brand-red)]/10 flex items-center justify-center shrink-0 border border-[var(--color-brand-red)]/20">
-                  <Phone className="w-4 h-4 text-[var(--color-brand-red)]" />
+                <div className="flex flex-col gap-1 pt-1">
+                  <span className="font-bold text-white uppercase tracking-wider text-xs">Gurugram Head Office</span>
+                  <span className="max-w-[240px] text-zinc-400">DTS House, Near Nahar Maruti Suzuki Work Shop, Dhankot, Gurugram, Haryana 122505</span>
+                  <a href="tel:+919812773410" className="text-white hover:text-[var(--color-brand-red)] transition-colors font-bold mt-1 text-base tracking-wide flex items-center gap-2">
+                    <Phone className="w-3 h-3 text-[var(--color-brand-red)]" /> +91 9812773410
+                  </a>
                 </div>
-                <a href="tel:+919812773410" className="hover:text-white transition-colors text-lg font-bold text-white tracking-wide">+91 9812773410</a>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                  <MapPin className="w-4 h-4 text-[var(--color-brand-red)]" />
+                </div>
+                <div className="flex flex-col gap-1 pt-1">
+                  <span className="font-bold text-white uppercase tracking-wider text-xs">Sonipat Branch Office</span>
+                  <span className="max-w-[240px] text-zinc-400">C 23, Niftem Rd, near Dena Bank Industrial Area, Phase IV, Kundli, Sonipat, Haryana 131028</span>
+                  <a href="tel:+919812773411" className="text-white hover:text-[var(--color-brand-red)] transition-colors font-bold mt-1 text-base tracking-wide flex items-center gap-2">
+                    <Phone className="w-3 h-3 text-[var(--color-brand-red)]" /> +91 9812773411
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">

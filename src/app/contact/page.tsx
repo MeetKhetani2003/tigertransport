@@ -103,10 +103,11 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 {[
-                  { icon: <Phone className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Phone Hotline", val: "+91 9812773410", link: "tel:+919812773410" },
-                  { icon: <Mail className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Email Queries", val: "info@durgatransport.com", link: "mailto:info@durgatransport.com" },
-                  { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Corporate HQ", val: "Durga Transport Services India Pvt Ltd, Transport Nagar, Delhi NCR, India", link: "#" },
-                  { icon: <Clock className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Office Timings", val: "24 Hours Operational Dispatch (Pan India)", link: "#" }
+                  { icon: <Phone className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Gurugram Hotline", val: "+91 9812773410", link: "tel:+919812773410" },
+                  { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Gurugram Office", val: "DTS House, Near Nahar Maruti Suzuki Work Shop, Dhankot, Gurugram, Haryana 122505", link: "#" },
+                  { icon: <Phone className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Sonipat Hotline", val: "+91 9812773411", link: "tel:+919812773411" },
+                  { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Sonipat Office", val: "C 23, Niftem Rd, near Dena Bank Industrial Area, Phase IV, Kundli, Sonipat, Haryana 131028", link: "#" },
+                  { icon: <Mail className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Email Queries", val: "info@durgatransport.com", link: "mailto:info@durgatransport.com" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 p-5 rounded-2xl border border-zinc-150 bg-zinc-50 hover:bg-zinc-50/50 transition-colors">
                     <div className="p-3 bg-white rounded-xl shadow-sm border border-zinc-100 shrink-0">
