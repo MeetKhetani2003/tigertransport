@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     canonical: "https://www.durgatransport.com/about",
   },
 };
-};
 
 export default function AboutLayout({
   children,
