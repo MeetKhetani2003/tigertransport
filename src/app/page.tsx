@@ -387,7 +387,7 @@ export default function Home() {
               </div>
 
               {/* Modern Floating Trust Card */}
-              <div className="absolute -bottom-12 sm:-bottom-10 left-6 sm:-right-8 bg-white/95 backdrop-blur-xl p-2 rounded-2xl shadow-2xl shadow-zinc-200/50 border border-zinc-100 flex items-center gap-4">
+              <div className="absolute -bottom-12 sm:-bottom-10 left-6 sm:left-10  bg-white/95 backdrop-blur-xl p-2 rounded-2xl shadow-2xl shadow-zinc-200/50 border border-zinc-100 flex items-center gap-4">
                 <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0 text-[var(--color-brand-red)]">
                   <Shield className="w-6 h-6" />
                 </div>
