@@ -76,7 +76,10 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                   <Mail className="w-4 h-4 text-[var(--color-brand-red)]" />
                 </div>
-                <a href="mailto:info@durgatransport.com" className="hover:text-white transition-colors">info@durgatransport.com</a>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:info@dtsindiapvtltd.com" className="hover:text-white transition-colors">info@dtsindiapvtltd.com</a>
+                  <a href="mailto:dtsindiapvtltd1@gmail.com" className="hover:text-white transition-colors">dtsindiapvtltd1@gmail.com</a>
+                </div>
               </li>
             </ul>
           </div>

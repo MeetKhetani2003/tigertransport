@@ -38,7 +38,8 @@ export function Navbar() {
             24/7 Pan India Operations
           </span>
           <div className="flex items-center divide-x divide-white/20">
-            <a href="mailto:info@durgatransport.com" className="pr-4 hover:text-white transition-colors">info@durgatransport.com</a>
+            <a href="mailto:info@dtsindiapvtltd.com" className="pr-4 hover:text-white transition-colors">info@dtsindiapvtltd.com</a>
+            <a href="mailto:dtsindiapvtltd1@gmail.com" className="px-4 hover:text-white transition-colors">dtsindiapvtltd1@gmail.com</a>
             <a href="tel:+919812773410" className="px-4 font-semibold hover:text-white transition-colors flex items-center gap-1.5">
               <Phone className="w-3 h-3" />
               +91 9812773410
