@@ -79,6 +79,19 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} antialiased bg-white text-zinc-900`}
     >
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18205812839"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18205812839');
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-[var(--color-brand-red)] selection:text-white">
         <SmoothScroll>
           <Navbar />
