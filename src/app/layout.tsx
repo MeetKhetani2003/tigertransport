@@ -67,6 +67,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.durgatransport.com",
   },
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
