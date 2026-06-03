@@ -107,7 +107,7 @@ export default function ContactPage() {
                   { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Gurugram Office", val: "DTS House, Near Nahar Maruti Suzuki Work Shop, Dhankot, Gurugram, Haryana 122505", link: "#" },
                   { icon: <Phone className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Sonipat Hotline", val: "+91 9812773411", link: "tel:+919812773411" },
                   { icon: <MapPin className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Sonipat Office", val: "C 23, Niftem Rd, near Dena Bank Industrial Area, Phase IV, Kundli, Sonipat, Haryana 131028", link: "#" },
-                  { icon: <Mail className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Email", val: "durgatransportservices2@gmail.com", link: "mailto:durgatransportservices2@gmail.com" }
+                  { icon: <Mail className="w-5 h-5 text-[var(--color-brand-red)]" />, label: "Email", val: "dtsindiapvtltd1@gmail.com", link: "mailto:dtsindiapvtltd1@gmail.com" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 p-5 rounded-2xl border border-zinc-150 bg-zinc-50 hover:bg-zinc-50/50 transition-colors">
                     <div className="p-3 bg-white rounded-xl shadow-sm border border-zinc-100 shrink-0">
