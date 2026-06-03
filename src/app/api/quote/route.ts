@@ -39,14 +39,14 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail", // Use your email provider
       auth: {
-        user: process.env.EMAIL_USER || "dtsindiapvtltd1@gmail.com",
+        user: process.env.EMAIL_USER || "durgatransportservices2@gmail.com",
         pass: process.env.EMAIL_PASS || "your-app-password",
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER || "dtsindiapvtltd1@gmail.com",
-      to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER || "dtsindiapvtltd1@gmail.com", // Send to company email
+      from: process.env.EMAIL_USER || "durgatransportservices2@gmail.com",
+      to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER || "durgatransportservices2@gmail.com", // Send to company email
       subject: `New Quote Request from ${businessName}`,
       html: `
         <h2>New Freight Quote Request</h2>
