@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "truck booking phone delhi"
   ],
   alternates: {
-    canonical: "https://www.durgatransport.com/contact",
+    canonical: "https://www.durgatransportservices.in/contact",
   },
 };
 

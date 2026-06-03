@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "transport offices delhi"
   ],
   alternates: {
-    canonical: "https://www.durgatransport.com/locations",
+    canonical: "https://www.durgatransportservices.in/locations",
   },
 };
 

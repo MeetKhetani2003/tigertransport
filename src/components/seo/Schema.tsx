@@ -18,9 +18,9 @@ export function generateLocalBusinessSchema(city?: string) {
     "@context": "https://schema.org",
     "@type": "LogisticsService",
     "name": "Durga Transport Services India Pvt Ltd",
-    "image": "https://www.durgatransport.com/project-assets/logo.png",
-    "@id": "https://www.durgatransport.com",
-    "url": "https://www.durgatransport.com",
+    "image": "https://www.durgatransportservices.in/project-assets/logo.png",
+    "@id": "https://www.durgatransportservices.in",
+    "url": "https://www.durgatransportservices.in",
     "telephone": "+919812773410",
     "address": {
       "@type": "PostalAddress",

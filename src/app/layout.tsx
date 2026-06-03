@@ -19,7 +19,7 @@ const outfit = Outfit({
 import { generateDynamicKeywords } from "@/lib/seo-utils";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.durgatransport.com"),
+  metadataBase: new URL("https://www.durgatransportservices.in"),
   title: {
     template: "%s | Durga Transport Services India Pvt Ltd",
     default: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
     description: "India's Trusted Transport & Logistics Partner. Reliable transportation, freight movement and logistics solutions across India.",
-    url: "https://www.durgatransport.com",
+    url: "https://www.durgatransportservices.in",
     siteName: "Durga Transport Services India Pvt Ltd",
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: "https://www.durgatransport.com",
+    canonical: "https://www.durgatransportservices.in",
   },
   icons: {
     icon: "/logo.png",

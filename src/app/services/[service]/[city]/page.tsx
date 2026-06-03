@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "transportation"
     ],
     alternates: {
-      canonical: `https://www.durgatransport.com/services/${serviceSlug}/${citySlug}`,
+      canonical: `https://www.durgatransportservices.in/services/${serviceSlug}/${citySlug}`,
     },
   }
 }

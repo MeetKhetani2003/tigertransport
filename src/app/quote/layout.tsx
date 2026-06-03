@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "shipping quote delhi"
   ],
   alternates: {
-    canonical: "https://www.durgatransport.com/quote",
+    canonical: "https://www.durgatransportservices.in/quote",
   },
 };
 

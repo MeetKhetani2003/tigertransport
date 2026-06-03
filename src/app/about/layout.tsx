@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "transport operators in delhi"
   ],
   alternates: {
-    canonical: "https://www.durgatransport.com/about",
+    canonical: "https://www.durgatransportservices.in/about",
   },
 };
 

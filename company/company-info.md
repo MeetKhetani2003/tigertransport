@@ -15,7 +15,7 @@ Gurugram,
 Haryana 122505
 
 Website:
-https://www.durgatransport.com
+https://www.durgatransportservices.in
 
 Email:
-info@durgatransport.com
+info@durgatransportservices.in

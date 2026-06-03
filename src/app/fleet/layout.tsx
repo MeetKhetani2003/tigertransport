@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "odc vehicle delhi"
   ],
   alternates: {
-    canonical: "https://www.durgatransport.com/fleet",
+    canonical: "https://www.durgatransportservices.in/fleet",
   },
 };
 

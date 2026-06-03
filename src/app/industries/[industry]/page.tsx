@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `Expert logistics and supply chain solutions for the ${industry.title.toLowerCase()} sector across India. Partner with Durga Transport Services India Pvt Ltd for secure and scalable transport.`,
     keywords: generateServiceSpecificKeywords(`${industry.title} Logistics`),
     alternates: {
-      canonical: `https://www.durgatransport.com/industries/${industry.slug}`,
+      canonical: `https://www.durgatransportservices.in/industries/${industry.slug}`,
     },
     robots: {
       index: true,
