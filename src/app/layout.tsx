@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import Script from "next/script";
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -82,20 +84,21 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} antialiased bg-white text-zinc-900`}
     >
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18205812839"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-18205812839');
-            `,
-          }}
-        />
-      </head>
+      <head />
       <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-[var(--color-brand-red)] selection:text-white">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T0J4L5XXZD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18205812839');
+            gtag('config', 'G-T0J4L5XXZD');
+          `}
+        </Script>
         <SmoothScroll>
           <Navbar />
           <main className="flex-grow">
