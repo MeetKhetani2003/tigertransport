@@ -36,7 +36,7 @@ export function Footer() {
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-x-8 gap-y-16 mb-16">
-          
+
           {/* Brand & Contact */}
           <div className="xl:col-span-2 space-y-8">
             <Link href="/" className="inline-block">
@@ -60,7 +60,7 @@ export function Footer() {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-4">
+              {/* <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                   <MapPin className="w-4 h-4 text-[var(--color-brand-red)]" />
                 </div>
@@ -71,7 +71,7 @@ export function Footer() {
                     <Phone className="w-3 h-3 text-[var(--color-brand-red)]" /> +91 9812773411
                   </a>
                 </div>
-              </li>
+              </li> */}
               <li className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                   <Mail className="w-4 h-4 text-[var(--color-brand-red)]" />
@@ -139,7 +139,7 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-sm font-bold tracking-[0.15em] uppercase text-white mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[var(--color-brand-red)]" /> Company
@@ -166,7 +166,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-zinc-500">
           <p>&copy; {currentYear} Durga Transport Services India Pvt Ltd. All rights reserved.</p>
-          
+
           {/* Social Links */}
           <div className="flex gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-[var(--color-brand-red)] hover:text-white transition-all duration-300">
