@@ -19,11 +19,7 @@ export const metadata: Metadata = {
     "transport offices delhi"
   ],
   alternates: {
-<<<<<<< HEAD
-    canonical: "https://www.durgatransport.com/locations",
-=======
     canonical: "https://www.durgatransportservices.in/locations",
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   },
 };
 

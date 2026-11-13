@@ -18,11 +18,7 @@ export const metadata: Metadata = {
     "truck booking phone delhi"
   ],
   alternates: {
-<<<<<<< HEAD
-    canonical: "https://www.durgatransport.com/contact",
-=======
     canonical: "https://www.durgatransportservices.in/contact",
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   },
 };
 

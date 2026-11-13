@@ -37,23 +37,14 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail", // Use your email provider
       auth: {
-<<<<<<< HEAD
-        user: process.env.EMAIL_USER || "your-email@gmail.com",
-=======
         user: process.env.EMAIL_USER || "durgatransportservices2@gmail.com",
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
         pass: process.env.EMAIL_PASS || "your-app-password",
       },
     });
 
     const mailOptions = {
-<<<<<<< HEAD
-      from: process.env.EMAIL_USER || "your-email@gmail.com",
-      to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER || "your-email@gmail.com", // Send to company email
-=======
       from: process.env.EMAIL_USER || "durgatransportservices2@gmail.com",
       to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER || "durgatransportservices2@gmail.com", // Send to company email
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
       subject: `New Contact Message from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>

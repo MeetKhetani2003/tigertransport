@@ -31,11 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `Professional ${service.title.toLowerCase()} across India. Reliable, secure, and enterprise-grade logistics by Durga Transport Services India Pvt Ltd. Serving 500+ cities.`,
     keywords: generateServiceSpecificKeywords(service.title),
     alternates: {
-<<<<<<< HEAD
-      canonical: `https://www.durgatransport.com/services/${service.slug}`,
-=======
       canonical: `https://www.durgatransportservices.in/services/${service.slug}`,
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
     },
     robots: {
       index: true,

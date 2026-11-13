@@ -7,12 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/'],
     },
-<<<<<<< HEAD
-    sitemap: 'https://www.durgatransport.com/sitemap.xml',
-    host: 'https://www.durgatransport.com',
-=======
     sitemap: 'https://www.durgatransportservices.in/sitemap.xml',
     host: 'https://www.durgatransportservices.in',
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   }
 }

@@ -37,11 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `cargo movement ${city.toLowerCase()}`
     ],
     alternates: {
-<<<<<<< HEAD
-      canonical: `https://www.durgatransport.com/locations/${citySlug}`,
-=======
       canonical: `https://www.durgatransportservices.in/locations/${citySlug}`,
->>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
     },
   }
 }
