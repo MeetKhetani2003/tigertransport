@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "manufacturing",
+    "title": "Manufacturing"
+  },
+  {
+    "slug": "automobile",
+    "title": "Automobile"
+  },
+  {
+    "slug": "construction",
+    "title": "Construction"
+  },
+  {
+    "slug": "infrastructure",
+    "title": "Infrastructure"
+  },
+  {
+    "slug": "retail-fmcg",
+    "title": "Retail & FMCG"
+  },
+  {
+    "slug": "industrial-equipment",
+    "title": "Industrial Equipment"
+  },
+  {
+    "slug": "heavy-machinery",
+    "title": "Heavy Machinery"
+  },
+  {
+    "slug": "pharmaceuticals",
+    "title": "Pharmaceuticals"
+  }
+]
