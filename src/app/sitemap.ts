@@ -3,7 +3,11 @@ import servicesData from '../../data/services.json'
 import industriesData from '../../data/industries.json'
 import citiesData from '../../data/cities.json'
 
+<<<<<<< HEAD
 const BASE_URL = 'https://www.durgatransport.com'
+=======
+const BASE_URL = 'https://www.durgatransportservices.in'
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

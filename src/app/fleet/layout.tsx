@@ -19,7 +19,11 @@ export const metadata: Metadata = {
     "odc vehicle delhi"
   ],
   alternates: {
+<<<<<<< HEAD
     canonical: "https://www.durgatransport.com/fleet",
+=======
+    canonical: "https://www.durgatransportservices.in/fleet",
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   },
 };
 

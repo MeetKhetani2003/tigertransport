@@ -19,7 +19,11 @@ export const metadata: Metadata = {
     "commercial transport delhi"
   ],
   alternates: {
+<<<<<<< HEAD
     canonical: "https://www.durgatransport.com/services",
+=======
+    canonical: "https://www.durgatransportservices.in/services",
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   },
 };
 

@@ -5,6 +5,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+<<<<<<< HEAD
+=======
+import Script from "next/script";
+
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,7 +24,11 @@ const outfit = Outfit({
 import { generateDynamicKeywords } from "@/lib/seo-utils";
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   metadataBase: new URL("https://www.durgatransport.com"),
+=======
+  metadataBase: new URL("https://www.durgatransportservices.in"),
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   title: {
     template: "%s | Durga Transport Services India Pvt Ltd",
     default: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
@@ -45,7 +54,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Durga Transport Services India Pvt Ltd | Enterprise Logistics Company",
     description: "India's Trusted Transport & Logistics Partner. Reliable transportation, freight movement and logistics solutions across India.",
+<<<<<<< HEAD
     url: "https://www.durgatransport.com",
+=======
+    url: "https://www.durgatransportservices.in",
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
     siteName: "Durga Transport Services India Pvt Ltd",
     images: [
       {
@@ -65,7 +78,14 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   alternates: {
+<<<<<<< HEAD
     canonical: "https://www.durgatransport.com",
+=======
+    canonical: "https://www.durgatransportservices.in",
+  },
+  icons: {
+    icon: "/logo.png",
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
   },
 };
 
@@ -79,7 +99,25 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} antialiased bg-white text-zinc-900`}
     >
+<<<<<<< HEAD
       <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-[var(--color-brand-red)] selection:text-white">
+=======
+      <head />
+      <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-[var(--color-brand-red)] selection:text-white">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T0J4L5XXZD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18205812839');
+            gtag('config', 'G-T0J4L5XXZD');
+          `}
+        </Script>
+>>>>>>> 1ed6b99042eaf238a271fbddc642a84066cb9e78
         <SmoothScroll>
           <Navbar />
           <main className="flex-grow">
